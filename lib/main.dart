@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Duolingo Clone',
+      title: 'StockSwipe: Swipe, Learn, Trade',
       routes: {
         '/': (context) => const HomeScreen(),
         '/getStarted': (context) => SurveyFormMaterial(),

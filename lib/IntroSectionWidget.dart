@@ -62,12 +62,12 @@ class IntroSectionWidget extends StatelessWidget {
                         backgroundColor: Color(0xFF7F56D9),
                         textColor: Colors.white,
                         width: availableWidth * 0.3),
-                    Gap(10),
-                    ButtonWithShadowWidget(
-                        text: 'I Already Have An Account',
-                        backgroundColor: Colors.white,
-                        textColor: Color(0xFF7F56D9),
-                        width: availableWidth * 0.3),
+                    // Gap(10),
+                    // ButtonWithShadowWidget(
+                    //     text: 'I Already Have An Account',
+                    //     backgroundColor: Colors.white,
+                    //     textColor: Color(0xFF7F56D9),
+                    //     width: availableWidth * 0.3),
                   ],
                 ),
               ),

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 import 'ButtonWithShadowWidget.dart';
@@ -36,11 +34,122 @@ class AboutUs extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                         color: Constants.PRIMARY_COLOR)),
-                Text("StockSwipe for Business"),
-                Text("Privacy Policy"),
-                Text("Investors"),
-                Text("Mission"),
-                Text("Contact Us")
+                TextButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: const Text('Interested? Hit us up!'),
+                              content: const SingleChildScrollView(
+                                child: ListBody(
+                                  children: <Widget>[
+                                    Text('We are currently in private Beta'),
+                                    Text(
+                                        'If you are interested in joining, please contact us at: ojasv.singh@stockswipes.com'),
+                                  ],
+                                ),
+                              ),
+                              actions: <Widget>[
+                                TextButton(
+                                  child: const Text('OK'),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            );
+                          });
+                    },
+                    child: Text("StockSwipe for Business"),
+                    style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.black))),
+                // TextButton(
+                //     onPressed: () {
+                //       return showLicensePage(context: context);
+                //     },
+                //     child: Text("Privacy Policy"),
+                //     style: ButtonStyle(
+                //         foregroundColor:
+                //             MaterialStateProperty.all<Color>(Colors.black))),
+                TextButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: const Text('Believe in us? Support us!'),
+                              content: const SingleChildScrollView(
+                                child: ListBody(
+                                  children: <Widget>[
+                                    Text('We are currently in private Beta'),
+                                    Text(
+                                        'We are currently not looking for further investors but if you have a proposal,'),
+                                    Text(
+                                        "do share with us and we will get back to you."),
+                                    Text(
+                                        "You can contact us at: ojasv.singh@stockswipes.com")
+                                  ],
+                                ),
+                              ),
+                              actions: <Widget>[
+                                TextButton(
+                                  child: const Text('OK'),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            );
+                          });
+                    },
+                    child: Text("Investors"),
+                    style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.black))),
+                // TextButton(
+                //     onPressed: () {
+                //       return showLicensePage(context: context);
+                //     },
+                //     child: Text("Mission"),
+                //     style: ButtonStyle(
+                //         foregroundColor:
+                //             MaterialStateProperty.all<Color>(Colors.black))),
+                TextButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: const Text('Get in touch!'),
+                              content: const SingleChildScrollView(
+                                child: ListBody(
+                                  children: <Widget>[
+                                    Text('We are currently in private Beta'),
+                                    Text('Reach us at: '),
+                                    Text("Email: ojasv.singh@stockswipes.com"),
+                                    Text(
+                                        "Address: IndiQube Epsilon, PaAmar Jyothi House Building"),
+                                    Text("Domlur, Bangalore, Karnataka 560071"),
+                                  ],
+                                ),
+                              ),
+                              actions: <Widget>[
+                                TextButton(
+                                  child: const Text('OK'),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            );
+                          });
+                    },
+                    child: Text("Contact Us"),
+                    style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.black))),
               ],
             ),
           ),

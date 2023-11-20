@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../AboutUs.dart';
 import '../InfoSectionWidget.dart';
@@ -18,9 +19,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<SliverAnimatedListState> _listKey =
-      GlobalKey<SliverAnimatedListState>();
-
   @override
   Widget build(BuildContext context) {
     double availableWidth = MediaQuery.of(context).size.width;
@@ -28,14 +26,34 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.language),
-        title: Text('Duolingo Clone'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () {},
-          ),
-        ],
+        leading: Container(),
+        actions: <Widget>[Container()],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Spacer(
+              flex: 1,
+            ),
+            SizedBox(
+              height: availableHeight * 0.05,
+              child: Image.asset(
+                'lib/assets/logo_temp.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+            Gap(20),
+            Text(
+              'Stockswipe',
+              style: TextStyle(
+                color: Color(0xFF7F56D9),
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Spacer(flex: 2)
+          ],
+        ),
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Color(0xFF7F56D9)),
       ),
@@ -61,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         imageAssetPath: 'lib/assets/img2.png',
                         titleText: 'free. fun. effective.',
                         mainBodyText:
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquet. Sed vitae nisi eget nunc ultricies aliquet.',
+                            'Learning with Stockswipe is fun, and research shows that it works! With quick, bite-sized lessons, you’ll earn points and unlock new levels while gaining real-world trading skills.',
                       ),
                     ),
                     SizedBox(
@@ -73,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         imageAssetPath: 'lib/assets/science.png',
                         titleText: 'backed by science.',
                         mainBodyText:
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquet. Sed vitae nisi eget nunc ultricies aliquet.',
+                            'We use a combination of research-backed teaching methods and delightful content to create courses that effectively teach trading skills!',
                       ),
                     ),
                     SizedBox(
@@ -85,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         imageAssetPath: 'lib/assets/streak_progress.png',
                         titleText: 'stay motivated.',
                         mainBodyText:
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquet. Sed vitae nisi eget nunc ultricies aliquet.',
+                            'We make it easy to form a habit of learning with game-like features, fun challenges, and reminders. Our trading journel helps you keep track of your trades, so you are better positioned to learn from your mistakes.',
                       ),
                     ),
                     SizedBox(
@@ -96,25 +114,26 @@ class _HomeScreenState extends State<HomeScreen> {
                         imageOnLeft: true,
                         imageAssetPath:
                             'lib/assets/different_learning_pace.png',
-                        titleText: 'learn at your own pave.',
+                        titleText: 'learn at your own pace.',
                         mainBodyText:
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquet. Sed vitae nisi eget nunc ultricies aliquet.',
+                            'Combining the best of AI and science, lessons are tailored to help you learn at just the right level and pace.',
                       ),
                     ),
-                    Column(
-                      children: [
-                        Divider(),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: availableWidth * 0.1, vertical: 20),
-                          height: 300,
-                          width: availableWidth,
-                          child: AboutUs(availableWidth: availableWidth),
-                        ),
-                      ],
-                    )
                   ],
                 ),
+                Gap(20),
+                Column(
+                  children: [
+                    Divider(),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: availableWidth * 0.1, vertical: 20),
+                      height: 300,
+                      width: availableWidth,
+                      child: AboutUs(availableWidth: availableWidth),
+                    ),
+                  ],
+                )
               ]),
             ),
           ),
