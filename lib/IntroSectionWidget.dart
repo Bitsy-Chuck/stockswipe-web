@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'ButtonWithShadowWidget.dart';
 
@@ -57,12 +58,44 @@ class IntroSectionWidget extends StatelessWidget {
                       ),
                     ),
                     const Gap(20),
-                    ButtonWithShadowWidget(
-                        text: 'Get Started',
-                        backgroundColor: Color(0xFF7F56D9),
-                        textColor: Colors.white,
-                        width: availableWidth * 0.3),
-                    // Gap(10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ButtonWithShadowWidget(
+                            text: 'Get Started',
+                            backgroundColor: const Color(0xFF7F56D9),
+                            textColor: Colors.white,
+                            width: availableWidth * 0.3),
+                        const Gap(10),
+                        Center(
+                          // alignment: Alignment.bottomRight,
+                          child: Row(
+                            children: [
+                              const Text("Charts powered by ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              InkWell(
+                                  onTap: () async {
+                                    const url = 'https://in.tradingview.com/';
+                                    Uri uri = Uri.parse(url);
+                                    if (await canLaunchUrl(uri)) {
+                                      await launchUrl(uri);
+                                    } else {
+                                      throw 'Could not launch $url';
+                                    }
+                                  },
+                                  child: const Text("TradingView",
+                                      style: TextStyle(color: Colors.blue)))
+                            ],
+                          ),
+                        )
+                      ],
+                    )
+
                     // ButtonWithShadowWidget(
                     //     text: 'I Already Have An Account',
                     //     backgroundColor: Colors.white,
